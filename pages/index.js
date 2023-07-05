@@ -27,7 +27,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* <section className={styles.how_it_works}>
+      <section className={styles.how_it_works}>
         {" "}
         <div class={styles.flex_container}>
           <div class={styles.flex_item_left}>
@@ -41,19 +41,19 @@ export default function Home() {
             <hr />
             <h2>Book A Call</h2>
             <p>
-              He empezado con un curso por audio y un tutor a través del Zoom.{" "}
+              
               <br /> Luego, fui a Italki.
             </p>
             <hr />
-            <h2>Los Audiovisuales</h2>
+            <h2>Complete Payment</h2>
             <p>Espero que unos enlaces puedan ayudarles.</p>
             <hr />
-            <h2>Los Viajes</h2>
+            <h2>Acquire Ownership</h2>
             <p>Quiero visitar México o Colombia (Salento).</p>
             <hr />
           </div>
         </div>
-      </section> */}
+      </section>
     </>
   );
 }
