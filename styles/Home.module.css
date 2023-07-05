@@ -446,14 +446,16 @@
   padding: 1.2rem;
   width: 100%;
   margin: 5px;
-  border: 1rem;
+  border: 1px solid #ffffff86;
+  border-radius: 0.5rem;
 }
 .form_control {
   background-color: transparent;
   padding: 1.2rem;
   width: 100%;
   margin: 5px;
-  border: 1rem;
+  border: 1px solid #ffffff86;
+  border-radius: 0.5rem;
 }
 /* Begin Media Queries*/
 @media screen and (max-width: 850px) {
