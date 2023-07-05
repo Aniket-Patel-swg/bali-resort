@@ -1,5 +1,4 @@
-import Head from "next/head";
-import Image from "next/image";
+import '@fortawesome/fontawesome-free/css/all.css';
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -137,23 +136,29 @@ export default function Home() {
             <div class={styles.direct_contact_container}>
               <ul class={styles.contact_list}>
                 <li class={styles.list_item}>
+                  <i class="fa fa-map-marker fa-2x">
                     <span class={styles.contact_text}>City, State</span>
+                  </i>
                 </li>
 
                 <li class={styles.list_item}>
+                  <i class="fa fa-phone fa-2x">
                     <span class={styles.contact_text}>
                       <a href="tel:1-212-555-5555" title="Give me a call">
                         (+62) 123456789
                       </a>
                     </span>
+                  </i>  
                 </li>
 
                 <li class={styles.list_item}>
+                  <i class="fa fa-envelope fa-2x">
                     <span class={styles.contact_text}>
-                      <a href="mailto:#" title="Send me an email">
-                        mailto:info@thebalihills.com
+                      <a href="mailto:info@thebalihills.com" title="Send me an email">
+                       info@thebalihills.com
                       </a>
                     </span>
+                  </i>
                 </li>
               </ul>
 
