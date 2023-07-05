@@ -19,6 +19,7 @@ export default function Home() {
             </p>
             <div class={styles.two_button}>
               <button class={styles.button_57} role="button">
+                <a href="https://wa.me/+62882006977701"></a>
                 <span class="text">Contact Us</span>
                 <span>Make it Happen!</span>
               </button>
