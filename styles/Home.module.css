@@ -60,7 +60,7 @@
   
     padding: 11rem 0;
   }
-  .text_content > h1 {
+  .text_content h1 {
     width: 440px;
     font-size: 38px;
     font-weight: 800;
@@ -71,7 +71,7 @@
   .text_content strong{
     color: #18181a;
   }
-  .text_content > p {
+  .text_content p {
     font-size: 1.15rem;
     letter-spacing: 0.35px;
     font-weight: 100;
@@ -147,33 +147,75 @@
 
 
 
-  @media screen and (min-width: 575px) {
-    /* five five five */
-    .dog__boxes {
-      display: flex;
-      padding: 0 10% 0 10%;
-    }
-  
-    /* six six six  */
-  
-    #six h1 {
-      max-width: 700px;
-      font-size: 40px;
-    }
-    #six {
-      padding-left: 10%;
-    }
-  
-    /* eight eight eight */
-  
-    .copyright > p {
-      margin-top: 20px;
-      text-align: start;
-    }
-    .copyright {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+@media (max-width: 470px) {
+  .white{
+    max-width: 75%;
   }
+  .blackish{
+    max-width: 75%;
+    text-align: left;
+  }
+}
   
+
+
+  /* how it works section */
+
+.flex_container {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.flex_item_left {
+  padding: 10px;
+  flex: 50%;
+}
+
+.flex_item_right {
+  padding: 10px;
+  flex: 50%;
+  padding-top: 60px;
+}
+
+/*webpage content*/
+
+.how_it_works{
+  margin-left: 60px;
+  margin-right: 60px;
+  background-color: #FFEFD5;
+}
+.flex_item_right h2{
+   margin: 2rem 0px;
+   font-family: Source Sans Pro, sans-serif;
+}
+/* .how_it_works h1, h2, h3, h4 {
+
+  font-family: Source Sans Pro, sans-serif;
+  
+}
+*/
+.how_it_works h1{
+  font-size: 75px;
+  
+}
+
+.how_it_works p {
+
+  font-family: Spectral, serif;
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+
+.how_it_works img {
+  width: 520px;
+  margin-top: 2rem;
+} 
+
+
+/* Responsive layout - mobile format */
+@media (max-width: 675px) {
+  .flex_item_right, .flex_item_left {
+    flex: 100%;
+  }
+}
