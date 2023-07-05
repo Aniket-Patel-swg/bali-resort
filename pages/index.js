@@ -13,9 +13,9 @@ export default function Home() {
             </h1>
             <p class={styles.blackish}>
               {" "}
-              Own your Dream Bali House <br />
-              Embrace citizenship and investment opportunities at Eco Hills Bali{" "}
-              <br /> unveil the pristine essence of paradise{" "}
+              Own your Dream Bali plot from $9600 <br />
+              Unlock investment opportunities at The Bali Hills
+              <br /> Unveil the pristine essence of paradise{" "}
             </p>
             <div class={styles.two_button}>
               <button class={styles.button_57} role="button">
@@ -48,7 +48,7 @@ export default function Home() {
             </p>
             <hr />
             <h2>Complete Payment</h2>
-            <p>Pay starting at €24,950 and take card of upkeep costs as the legal owner, Investor will feel secure in their 
+            <p>Pay starting at $9,600 and take card of upkeep costs as the legal owner, Investor will feel secure in their 
               investment thanks to updates on teh project's development every three months.
               <br /> <br />
               This is exceptional chance to purchase property in that is rooted in Bali's tropical essence, where 
