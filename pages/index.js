@@ -18,7 +18,7 @@ export default function Home() {
               <br /> Unveil the pristine essence of paradise{" "}
             </p>
             <div class={styles.two_button}>
-                <a href="https://wa.me/+62882006977701" target="_blank">
+                <a href="mailto:info@thebalihills.com" target="_blank">
               <button class={styles.button_57} role="button">
                 <span class="text">Contact Us</span>
                 <span>Make it Happen!</span>
