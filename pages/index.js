@@ -12,11 +12,9 @@ export default function Home() {
             </h1>
             <p class={styles.blackish}>
               {" "}
-              Experience the chance to own your dream plot in Bali, starting at
-              a price of $9600. <br />
-              Embrace the opportunity to unlock lucrative investment prospects
-              at The Bali Hills,
-              <br /> where the untouched beauty of paradise awaits.{" "}
+              Own your dream plot in Bali at The Bali Hills, starting from $9600. <br />
+              Embrace lucrative investment prospects while preserving nature, as 50% of the land is dedicated to open space.
+              <br /> Experience paradise and luxury living in one enchanting destination.{" "}
             </p>
             <div class={styles.two_button}>
               <a href="mailto:info@thebalihills.com" target="_blank">
@@ -44,34 +42,23 @@ export default function Home() {
             <hr />
             <h2>Book A Call</h2>
             <p>
-              Complete the form, and our team will contact you for the
-              reservation contract. We're committed to supporting your
-              investment journey and providing necessary information and
-              guidance.
-              <br /> Count on our expertise to help you seize this
-              transformative opportunity.
+            Complete the form, and our team will contact you for the reservation contract. We're committed to supporting your investment journey and providing necessary information and guidance.
+              <br />  Count on our expertise to help you seize this transformative opportunity.
             </p>
             <hr />
             <h2>Complete Payment</h2>
             <p>
-              Start your ownership with a $9,600 payment. We handle upkeep
-              costs, ensuring a worry-free experience. Stay informed with
-              regular project updates, witnessing the value of your investment.
+            Start your ownership with a $9,600 payment. We handle upkeep costs, 
+            ensuring a worry-free experience. Stay informed with regular project updates, witnessing the value of your investment. 
               <br />
-              Enjoy a luxurious and sustainable lifestyle in Bali's tropical
-              paradise, blending nature and modern amenities seamlessly.
+              Enjoy a luxurious and sustainable lifestyle in Bali's tropical paradise, blending nature and modern amenities seamlessly.
             </p>
             <hr />
             <h2>Acquire Ownership</h2>
             <p>
-              Invest in the Bali Hills community for your own land and property.
-              Claim your stake in this prestigious development starting summer
-              2025. Enjoy luxury, sustainability, and ecological responsibility
-              with thoughtfully constructed units, high standards, and
-              eco-friendly features.
+            Invest in the Bali Hills community for your own land and property. Claim your stake in this prestigious development starting summer 2024. Enjoy luxury, sustainability, and ecological responsibility with thoughtfully constructed units, high standards, and eco-friendly features.
               <br />
-              Own a property that meets your expectations in quality,
-              aesthetics, and environmental consciousness.
+              Own a property that meets your expectations in quality, aesthetics, and environmental consciousness.
             </p>
             <hr />
           </div>
