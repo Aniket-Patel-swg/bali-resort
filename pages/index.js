@@ -41,15 +41,26 @@ export default function Home() {
             <hr />
             <h2>Book A Call</h2>
             <p>
-              
-              <br /> Luego, fui a Italki.
+              Fill out the form and we'll contact you to talk about the folowing steps for obtaining your reseravation contract.
+              <br /> The life-changing potential of this investment opportunity is something we look forward to assisting you with 
+              as you continue to investigate.
             </p>
             <hr />
             <h2>Complete Payment</h2>
-            <p>Espero que unos enlaces puedan ayudarles.</p>
+            <p>Pay starting at €24,950 and take card of upkeep costs as the legal owner, Investor will feel secure in their 
+              investment thanks to updates on teh project's development every three months.
+              <br /> <br />
+              This is exceptional chance to purchase property in that is rooted in Bali's tropical essence, where 
+              luxury and sustainability coexist to create a truly exceptional living environment.
+            </p>
             <hr />
             <h2>Acquire Ownership</h2>
-            <p>Quiero visitar México o Colombia (Salento).</p>
+            <p>
+              Investors will get their very own piece of land and property within Eco Hills starting in the summer of 2025.
+              <br /> <br />
+              For individuals searching for a ready-to-live-in or rent-out property that is both ecologically responsible and
+              constructed to the greatest standards, this development offers the ideal answer
+            </p>
             <hr />
           </div>
         </div>

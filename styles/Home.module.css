@@ -238,6 +238,7 @@
   }
   .flex_item_left {
     flex: 100%;
+    padding-top: 3rem;
   }
   
   .flex_item_right {
