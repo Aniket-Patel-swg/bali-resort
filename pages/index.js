@@ -13,17 +13,19 @@ export default function Home() {
             </h1>
             <p class={styles.blackish}>
               {" "}
-              Own your Dream Bali plot from $9600 <br />
-              Unlock investment opportunities at The Bali Hills
-              <br /> Unveil the pristine essence of paradise{" "}
+              Experience the chance to own your dream plot in Bali, starting at
+              a price of $9600. <br />
+              Embrace the opportunity to unlock lucrative investment prospects
+              at The Bali Hills,
+              <br /> where the untouched beauty of paradise awaits.{" "}
             </p>
             <div class={styles.two_button}>
-                <a href="mailto:info@thebalihills.com" target="_blank">
-              <button class={styles.button_57} role="button">
-                <span class="text">Contact Us</span>
-                <span>Make it Happen!</span>
-              </button>
-                </a>
+              <a href="mailto:info@thebalihills.com" target="_blank">
+                <button class={styles.button_57} role="button">
+                  <span class="text">Contact Us</span>
+                  <span>Make it Happen!</span>
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -43,25 +45,34 @@ export default function Home() {
             <hr />
             <h2>Book A Call</h2>
             <p>
-              Fill out the form and we'll contact you to talk about the folowing steps for obtaining your reseravation contract.
-              <br /> The life-changing potential of this investment opportunity is something we look forward to assisting you with 
-              as you continue to investigate.
+              Complete the form, and our team will contact you for the
+              reservation contract. We're committed to supporting your
+              investment journey and providing necessary information and
+              guidance.
+              <br /> Count on our expertise to help you seize this
+              transformative opportunity.
             </p>
             <hr />
             <h2>Complete Payment</h2>
-            <p>Pay starting at $9,600 and take card of upkeep costs as the legal owner, Investor will feel secure in their 
-              investment thanks to updates on teh project's development every three months.
-              <br /> <br />
-              This is exceptional chance to purchase property in that is rooted in Bali's tropical essence, where 
-              luxury and sustainability coexist to create a truly exceptional living environment.
+            <p>
+              Start your ownership with a $9,600 payment. We handle upkeep
+              costs, ensuring a worry-free experience. Stay informed with
+              regular project updates, witnessing the value of your investment.
+              <br />
+              Enjoy a luxurious and sustainable lifestyle in Bali's tropical
+              paradise, blending nature and modern amenities seamlessly.
             </p>
             <hr />
             <h2>Acquire Ownership</h2>
             <p>
-              Investors will get their very own piece of land and property within Eco Hills starting in the summer of 2025.
-              <br /> <br />
-              For individuals searching for a ready-to-live-in or rent-out property that is both ecologically responsible and
-              constructed to the greatest standards, this development offers the ideal answer
+              Invest in the Bali Hills community for your own land and property.
+              Claim your stake in this prestigious development starting summer
+              2025. Enjoy luxury, sustainability, and ecological responsibility
+              with thoughtfully constructed units, high standards, and
+              eco-friendly features.
+              <br /> 
+              Own a property that meets your expectations in quality,
+              aesthetics, and environmental consciousness.
             </p>
             <hr />
           </div>
