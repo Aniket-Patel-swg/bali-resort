@@ -70,13 +70,99 @@ export default function Home() {
               2025. Enjoy luxury, sustainability, and ecological responsibility
               with thoughtfully constructed units, high standards, and
               eco-friendly features.
-              <br /> 
+              <br />
               Own a property that meets your expectations in quality,
               aesthetics, and environmental consciousness.
             </p>
             <hr />
           </div>
         </div>
+      </section>
+
+      <section className={styles.footer_seciton}>
+        <section className={styles.contact}>
+          <h1 class={styles.section_header}>Contact us</h1>
+
+          <div class={styles.contact_wrapper}>
+            <form id="contact-form" class={styles.form_horizontal} role="form">
+              <div class={styles.form_group}>
+                <div class={styles.col_sm_12}>
+                  <input
+                    type="text"
+                    class={styles.form_control}
+                    id="name"
+                    placeholder="NAME"
+                    name="name"
+                    value=""
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class={styles.form_group}>
+                <div class={styles.col_sm_12}>
+                  <input
+                    type="email"
+                    class={styles.form_control}
+                    id="email"
+                    placeholder="EMAIL"
+                    name="email"
+                    value=""
+                    required
+                  />
+                </div>
+              </div>
+
+              <textarea
+                class={styles.form_control}
+                rows="10"
+                placeholder="MESSAGE"
+                name="message"
+                required
+              ></textarea>
+
+              <button
+                class={styles.send_button}
+                id="submit"
+                type="submit"
+                value="SEND"
+              >
+                <div class={styles.alt_send_button}>
+                  <i class="fa fa-paper-plane"></i>
+                  <span class={styles.send_text}>SEND</span>
+                </div>  
+              </button>
+            </form>
+
+            <div class={styles.direct_contact_container}>
+              <ul class={styles.contact_list}>
+                <li class={styles.list_item}>
+                    <span class={styles.contact_text}>City, State</span>
+                </li>
+
+                <li class={styles.list_item}>
+                    <span class={styles.contact_text}>
+                      <a href="tel:1-212-555-5555" title="Give me a call">
+                        (+62) 123456789
+                      </a>
+                    </span>
+                </li>
+
+                <li class={styles.list_item}>
+                    <span class={styles.contact_text}>
+                      <a href="mailto:#" title="Send me an email">
+                        mailto:info@thebalihills.com
+                      </a>
+                    </span>
+                </li>
+              </ul>
+
+              <hr />
+
+              <div class={styles.copyright}>&copy; ALL OF THE RIGHTS RESERVED</div>
+            </div>
+          </div>
+        </section>
       </section>
     </>
   );
