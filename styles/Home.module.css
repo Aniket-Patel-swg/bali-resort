@@ -297,11 +297,13 @@
 
 .form_control textarea {
   max-width: 400px;
-  background-color: #000;
+  background-color: transparent;
   color: #fff;
   letter-spacing: 1px;
 }
-
+.message_input textarea{
+color: white;
+}
 .send_button {
   margin-top: 15px;
   height: 34px;
@@ -449,6 +451,7 @@
   margin: 5px;
   border: 1px solid #ffffff86;
   border-radius: 0.5rem;
+  color: white;
 }
 .form_control {
   background-color: transparent;

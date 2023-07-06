@@ -1,4 +1,4 @@
-import '@fortawesome/fontawesome-free/css/all.css';
+import "@fortawesome/fontawesome-free/css/all.css";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -12,9 +12,12 @@ export default function Home() {
             </h1>
             <p class={styles.blackish}>
               {" "}
-              Own your dream plot in Bali at The Bali Hills, starting from $9600. <br />
-              Embrace lucrative investment prospects while preserving nature, as 50% of the land is dedicated to open space.
-              <br /> Experience paradise and luxury living in one enchanting destination.{" "}
+              Own your dream plot in Bali at The Bali Hills, starting from
+              $9600. <br />
+              Embrace lucrative investment prospects while preserving nature, as
+              50% of the land is dedicated to open space.
+              <br /> Experience paradise and luxury living in one enchanting
+              destination.{" "}
             </p>
             <div class={styles.two_button}>
               <a href="mailto:info@thebalihills.com" target="_blank">
@@ -42,23 +45,34 @@ export default function Home() {
             <hr />
             <h2>Book A Call</h2>
             <p>
-            Complete the form, and our team will contact you for the reservation contract. We're committed to supporting your investment journey and providing necessary information and guidance.
-              <br />  Count on our expertise to help you seize this transformative opportunity.
+              Complete the form, and our team will contact you for the
+              reservation contract. We're committed to supporting your
+              investment journey and providing necessary information and
+              guidance.
+              <br /> Count on our expertise to help you seize this
+              transformative opportunity.
             </p>
             <hr />
             <h2>Complete Payment</h2>
             <p>
-            Start your ownership with a $9,600 payment. We handle upkeep costs, 
-            ensuring a worry-free experience. Stay informed with regular project updates, witnessing the value of your investment. 
+              Start your ownership with a $9,600 payment. We handle upkeep
+              costs, ensuring a worry-free experience. Stay informed with
+              regular project updates, witnessing the value of your investment.
               <br />
-              Enjoy a luxurious and sustainable lifestyle in Bali's tropical paradise, blending nature and modern amenities seamlessly.
+              Enjoy a luxurious and sustainable lifestyle in Bali's tropical
+              paradise, blending nature and modern amenities seamlessly.
             </p>
             <hr />
             <h2>Acquire Ownership</h2>
             <p>
-            Invest in the Bali Hills community for your own land and property. Claim your stake in this prestigious development starting summer 2024. Enjoy luxury, sustainability, and ecological responsibility with thoughtfully constructed units, high standards, and eco-friendly features.
+              Invest in the Bali Hills community for your own land and property.
+              Claim your stake in this prestigious development starting summer
+              2024. Enjoy luxury, sustainability, and ecological responsibility
+              with thoughtfully constructed units, high standards, and
+              eco-friendly features.
               <br />
-              Own a property that meets your expectations in quality, aesthetics, and environmental consciousness.  
+              Own a property that meets your expectations in quality,
+              aesthetics, and environmental consciousness.
             </p>
             <hr />
           </div>
@@ -79,7 +93,6 @@ export default function Home() {
                     id="name"
                     placeholder="NAME"
                     name="name"
-                    value=""
                     required
                   />
                 </div>
@@ -93,20 +106,20 @@ export default function Home() {
                     id="email"
                     placeholder="EMAIL"
                     name="email"
-                    value=""
                     required
                   />
                 </div>
               </div>
 
-              <textarea
-                class={styles.form_control}
-                rows="10"
-                placeholder="MESSAGE"
-                name="message"
-                required
-              ></textarea>
-
+              <div className={styles.message_input}>
+                <textarea
+                  class={styles.form_control}
+                  rows="10"
+                  placeholder="MESSAGE"
+                  name="message"
+                  required
+                ></textarea>
+              </div>
               <button
                 class={styles.send_button}
                 id="submit"
@@ -116,7 +129,7 @@ export default function Home() {
                 <div class={styles.alt_send_button}>
                   <i class="fa fa-paper-plane"></i>
                   <span class={styles.send_text}>SEND</span>
-                </div>  
+                </div>
               </button>
             </form>
 
@@ -141,8 +154,11 @@ export default function Home() {
                 <li class={styles.list_item}>
                   <i class="fa fa-envelope fa-2x">
                     <span class={styles.contact_text}>
-                      <a href="mailto:info@thebalihills.com" title="Send me an email">
-                       info@thebalihills.com
+                      <a
+                        href="mailto:info@thebalihills.com"
+                        title="Send me an email"
+                      >
+                        info@thebalihills.com
                       </a>
                     </span>
                   </i>
@@ -151,7 +167,9 @@ export default function Home() {
 
               <hr />
 
-              <div class={styles.copyright}>&copy; ALL OF THE RIGHTS RESERVED</div>
+              <div class={styles.copyright}>
+                &copy; ALL OF THE RIGHTS RESERVED
+              </div>
             </div>
           </div>
         </section>
