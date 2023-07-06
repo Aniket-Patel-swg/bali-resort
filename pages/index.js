@@ -58,7 +58,7 @@ export default function Home() {
             <p>
             Invest in the Bali Hills community for your own land and property. Claim your stake in this prestigious development starting summer 2024. Enjoy luxury, sustainability, and ecological responsibility with thoughtfully constructed units, high standards, and eco-friendly features.
               <br />
-              Own a property that meets your expectations in quality, aesthetics, and environmental consciousness.
+              Own a property that meets your expectations in quality, aesthetics, and environmental consciousness.  
             </p>
             <hr />
           </div>
@@ -122,7 +122,7 @@ export default function Home() {
 
             <div class={styles.direct_contact_container}>
               <ul class={styles.contact_list}>
-                <li class={styles.list_item}>
+                {/* <li class={styles.list_item}>
                   <i class="fa fa-map-marker fa-2x">
                     <span class={styles.contact_text}>City, State</span>
                   </i>
@@ -136,7 +136,7 @@ export default function Home() {
                       </a>
                     </span>
                   </i>  
-                </li>
+                </li> */}
 
                 <li class={styles.list_item}>
                   <i class="fa fa-envelope fa-2x">
