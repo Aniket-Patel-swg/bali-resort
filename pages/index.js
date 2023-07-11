@@ -1,7 +1,10 @@
+import react, { useState } from "react";
 import "@fortawesome/fontawesome-free/css/all.css";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       <section className={styles.one}>
@@ -174,6 +177,26 @@ export default function Home() {
           </div>
         </section>
       </section>
+      <div className={styles.chatbot_section}>
+        {isOpen ? (
+          <>
+            <div className={styles.chatbot}>
+              <section className={styles.chatbot_header}>
+                <p>Chat with US</p>
+                <span className={styles.close_button}>
+                  <i class="fa fa-close" onClick={() => setIsOpen(false)}></i>
+                </span>
+              </section>
+            </div>
+          </>
+        ) : (
+          <>
+            <section className={styles.check} onClick={() => setIsOpen(true)}>
+              <i class="fas fa-comment-alt"></i>
+            </section>
+          </>
+        )}
+      </div>
     </>
   );
 }

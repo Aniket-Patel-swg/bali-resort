@@ -535,3 +535,37 @@ color: white;
   }
 }
 
+
+
+/* chat bot section */
+
+.check{
+  border-radius: 2rem;
+  font-size: 2rem;
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  color: #63035e;
+  cursor: pointer;
+}
+.chatbot{
+  height: 150px;
+  background-color: white;
+  position: fixed;
+  right: 20px;
+  bottom: 15px;
+  height: 350px;
+  width: 300px;
+  border-radius: 1rem;
+}
+.chatbot_header{
+  display: flex;
+  justify-content: space-between;
+  background-color: gray;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  color: white;
+}
+.close_button{
+  cursor: pointer;
+}
