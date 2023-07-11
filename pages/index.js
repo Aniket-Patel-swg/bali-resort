@@ -2,7 +2,7 @@ import react, { useState } from "react";
 import "@fortawesome/fontawesome-free/css/all.css";
 import styles from "../styles/Home.module.css";
 
-const API_KEY = "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";
+
 const systemMessage = {
   role: "system",
   message:
