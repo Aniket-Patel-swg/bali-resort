@@ -557,6 +557,9 @@ color: white;
   height: 350px;
   width: 300px;
   border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .chatbot_header{
   display: flex;
@@ -568,4 +571,42 @@ color: white;
 }
 .close_button{
   cursor: pointer;
+}
+.chatbot_input{
+  display: flex;
+}
+.chatbot_input input{
+  padding: 1rem;
+  width: 90%;
+  border-radius: 1rem;
+}
+.chatbot_input i{
+  margin: auto;
+  /* margin: 1rem 0px; */
+  cursor: pointer;
+}
+.chat_section{
+  height: 100%;
+}
+.chat_section p{
+  margin: 5px 0px;
+  margin-left: 10px;
+}
+
+@media (max-width: 440px) {
+  .chatbot{
+    right: 15px;
+    width: 250px;
+    height: 300px;
+  }
+  .chatbot_header{
+    padding: 0.8rem;
+  }
+  .chatbot_input input{
+    padding: 0.8rem;
+  }
+  .chat_section p {
+    font-size: 0.9rem;
+    margin: 5px 0.7rem;
+  }
 }

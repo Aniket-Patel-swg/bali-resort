@@ -2,8 +2,123 @@ import react, { useState } from "react";
 import "@fortawesome/fontawesome-free/css/all.css";
 import styles from "../styles/Home.module.css";
 
+const API_KEY = "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";
+const systemMessage = {
+  role: "system",
+  message:
+    "Explain things like you're customer support mamanger for the balihills real estate project.",
+    sender : 'bot'
+};
+
 export default function Home() {
+
   const [isOpen, setIsOpen] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+  const [messages, setMessages] = useState([{
+    msg : "Hello, I'm The Bali Hills AI, How can I help you?",
+  }]);
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSend();
+    }
+  };
+
+  // const [messages, setMessages] = useState([
+  //   {
+  //     message: "Hello, I'm The Bali Hills AI, How can I help you?",
+  //     sentTime: "just now",
+  //     sender: "ChatGPT",
+  //   },
+  // ]);
+  const [isTyping, setIsTyping] = useState(false);
+
+  const handleSend = (e) => {
+    setMessages((prevMessages) =>[
+      ...prevMessages,
+      {sender : 'user',}
+    ])
+    setInputValue("");
+  };
+
+  console.log(inputValue);
+
+  // const handleSend = async (message) => {
+  //   const newMessage = {
+  //     message,
+  //     direction: "outgoing",
+  //     sender: "user",
+  //   };
+
+  //   const newMessages = [...messages, newMessage];
+
+  //   setMessages(newMessages);
+
+  //   // Initial system message to determine ChatGPT functionality
+  //   // How it responds, how it talks, etc.
+  //   setIsTyping(true);
+  //   await processMessageToChatGPT(newMessages);
+  // };
+
+  // async function processMessageToChatGPT(chatMessages) {
+  //   // messages is an array of messages
+  //   // Format messages for chatGPT API
+  //   // API is expecting objects in format of { role: "user" or "assistant", "content": "message here"}
+  //   // So we need to reformat
+
+  //   let apiMessages = chatMessages.map((messageObject) => {
+  //     let role = "";
+  //     if (messageObject.sender === "ChatGPT") {
+  //       role = "assistant";
+  //     } else {
+  //       role = "user";
+  //     }
+  //     return { role: role, content: messageObject.message };
+  //   });
+
+  //   // Get the request body set up with the model we plan to use
+  //   // and the messages which we formatted above. We add a system message in the front to'
+  //   // determine how we want chatGPT to act.
+  //   const apiRequestBody = {
+  //     model: "gpt-3.5-turbo",
+  //     messages: [
+  //       systemMessage, // The system message DEFINES the logic of our chatGPT
+  //       ...apiMessages, // The messages from our chat with ChatGPT
+  //     ],
+  //   };
+
+  //   await fetch("https://api.openai.com/v1/chat/completions", {
+  //     method: "POST",
+  //     headers: {
+  //       Authorization: "Bearer " + API_KEY,
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(apiRequestBody),
+  //   })
+  //     .then((data) => {
+  //       return data.json();
+  //     })
+  //     .then((data) => {
+  //       console.log(data);
+  //       if (data.choices && data.choices.length > 0) {
+  //         setMessages([
+  //           ...chatMessages,
+  //           {
+  //             message: data.choices[0].message.content,
+  //             sender: "ChatGPT",
+  //           },
+  //         ]);
+  //       }
+  //       setIsTyping(false);
+  //     });
+
+  // }
+
+  console.log(messages);
 
   return (
     <>
@@ -182,10 +297,37 @@ export default function Home() {
           <>
             <div className={styles.chatbot}>
               <section className={styles.chatbot_header}>
-                <p>Chat with US</p>
+                <p>Chat with Us</p>
                 <span className={styles.close_button}>
                   <i class="fa fa-close" onClick={() => setIsOpen(false)}></i>
                 </span>
+              </section>
+              <section className={styles.chat_section}>
+                {/* <div className={styles.bot}>
+                  <p>bot</p>
+                  
+                </div>
+                <div className={styles.user}>
+                  <p>user</p>
+                </div> */}
+                {messages.map((message, index) => (
+                  <div
+                    key={index}
+                    // className={`message ${message.sender === 'user' ? 'user' : 'bot'}`}
+                  >
+                    <p>{message.msg}</p>
+                  </div>
+                ))}
+              </section>
+              <section className={styles.chatbot_input}>
+                <input
+                  type="text"
+                  placeholder="Type your message..."
+                  value={inputValue}
+                  onChange={handleInputChange}
+                  onKeyPress={handleKeyPress}
+                />
+                <i class="fa fa-paper-plane"></i>
               </section>
             </div>
           </>
