@@ -11,7 +11,7 @@ import {
 import "@fortawesome/fontawesome-free/css/all.css";
 import styles from "../styles/Home.module.css";
 
-const API_KEY = "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";
+const API_KEY = process.env.NEXT_PUBLIC_BOT_API;
 
 const systemMessage = {
   role: "system",
@@ -20,7 +20,6 @@ const systemMessage = {
 };
 
 export default function Home() {
-
   // const [isOpen, setIsOpen] = useState(false);
   // const [inputValue, setInputValue] = useState("");
 
