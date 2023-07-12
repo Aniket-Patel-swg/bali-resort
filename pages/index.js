@@ -1,51 +1,38 @@
 import react, { useState } from "react";
+import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
+import {
+  MainContainer,
+  ChatContainer,
+  MessageList,
+  Message,
+  MessageInput,
+  TypingIndicator,
+} from "@chatscope/chat-ui-kit-react";
 import "@fortawesome/fontawesome-free/css/all.css";
 import styles from "../styles/Home.module.css";
 
+const API_KEY = "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";
 
 const systemMessage = {
   role: "system",
-  message:
-    "Explain things like you're customer support mamanger for the balihills real estate project.",
-    sender : 'bot'
+  content: 
+    "Explain things like you're customer support team for the Bali Hills Real Estate Project, and you're talking to a potential customer. Also keep it short maximum 10-15 words and firendly. Don't provide exact pricing detials, just say that they can contact us for more information, you can give our mail id 'info@thebalihills.com'.The Bali Hills real estate project is located on wayand in Kerela.",
 };
 
 export default function Home() {
 
-  const [isOpen, setIsOpen] = useState(false);
-  const [inputValue, setInputValue] = useState("");
-  const [messages, setMessages] = useState([{
-    msg : "Hello, I'm The Bali Hills AI, How can I help you?",
-  }]);
+  // const [isOpen, setIsOpen] = useState(false);
+  // const [inputValue, setInputValue] = useState("");
 
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-  };
+  // const handleInputChange = (e) => {
+  //   setInputValue(e.target.value);
+  // };
 
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      handleSend();
-    }
-  };
-
-  // const [messages, setMessages] = useState([
-  //   {
-  //     message: "Hello, I'm The Bali Hills AI, How can I help you?",
-  //     sentTime: "just now",
-  //     sender: "ChatGPT",
-  //   },
-  // ]);
-  const [isTyping, setIsTyping] = useState(false);
-
-  const handleSend = (e) => {
-    setMessages((prevMessages) =>[
-      ...prevMessages,
-      {sender : 'user',}
-    ])
-    setInputValue("");
-  };
-
-  console.log(inputValue);
+  // const handleKeyPress = (e) => {
+  //   if (e.key === "Enter") {
+  //     handleSend();
+  //   }
+  // };
 
   // const handleSend = async (message) => {
   //   const newMessage = {
@@ -58,17 +45,11 @@ export default function Home() {
 
   //   setMessages(newMessages);
 
-  //   // Initial system message to determine ChatGPT functionality
-  //   // How it responds, how it talks, etc.
   //   setIsTyping(true);
   //   await processMessageToChatGPT(newMessages);
   // };
 
   // async function processMessageToChatGPT(chatMessages) {
-  //   // messages is an array of messages
-  //   // Format messages for chatGPT API
-  //   // API is expecting objects in format of { role: "user" or "assistant", "content": "message here"}
-  //   // So we need to reformat
 
   //   let apiMessages = chatMessages.map((messageObject) => {
   //     let role = "";
@@ -80,14 +61,11 @@ export default function Home() {
   //     return { role: role, content: messageObject.message };
   //   });
 
-  //   // Get the request body set up with the model we plan to use
-  //   // and the messages which we formatted above. We add a system message in the front to'
-  //   // determine how we want chatGPT to act.
   //   const apiRequestBody = {
   //     model: "gpt-3.5-turbo",
   //     messages: [
-  //       systemMessage, // The system message DEFINES the logic of our chatGPT
-  //       ...apiMessages, // The messages from our chat with ChatGPT
+  //       systemMessage, 
+  //       ...apiMessages, 
   //     ],
   //   };
 
@@ -118,6 +96,85 @@ export default function Home() {
 
   // }
 
+  const [messages, setMessages] = useState([
+    {
+      message: "Hello, I'm The Bali Hills AI! How canI help you? ",
+      sentTime: "just now",
+      sender: "ChatGPT",
+    },
+  ]);
+  const [isTyping, setIsTyping] = useState(false);
+  console.log(messages);
+
+  const handleSend = async (message) => {
+    const newMessage = {
+      message,
+      direction: "outgoing",
+      sender: "user",
+    };
+
+    const newMessages = [...messages, newMessage];
+
+    setMessages(newMessages);
+
+    // Initial system message to determine ChatGPT functionality
+    // How it responds, how it talks, etc.
+    setIsTyping(true);
+    await processMessageToChatGPT(newMessages);
+  };
+
+  async function processMessageToChatGPT(chatMessages) {
+    // messages is an array of messages
+    // Format messages for chatGPT API
+    // API is expecting objects in format of { role: "user" or "assistant", "content": "message here"}
+    // So we need to reformat
+
+    let apiMessages = chatMessages.map((messageObject) => {
+      let role = "";
+      if (messageObject.sender === "ChatGPT") {
+        role = "assistant";
+      } else {
+        role = "user";
+      }
+      return { role: role, content: messageObject.message };
+    });
+
+    // Get the request body set up with the model we plan to use
+    // and the messages which we formatted above. We add a system message in the front to'
+    // determine how we want chatGPT to act.
+    const apiRequestBody = {
+      model: "gpt-3.5-turbo",
+      messages: [
+        systemMessage, // The system message DEFINES the logic of our chatGPT
+        ...apiMessages, // The messages from our chat with ChatGPT
+      ],
+    };
+
+    await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + API_KEY,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(apiRequestBody),
+    })
+      .then((data) => {
+        return data.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setMessages([
+          ...chatMessages,
+          {
+            message: data.choices[0].message.content,
+            sender: "ChatGPT",
+          },
+        ]);
+        setIsTyping(false);
+      });
+  }
+
+  
   console.log(messages);
 
   return (
@@ -292,7 +349,7 @@ export default function Home() {
           </div>
         </section>
       </section>
-      <div className={styles.chatbot_section}>
+      {/* <div className={styles.chatbot_section}>
         {isOpen ? (
           <>
             <div className={styles.chatbot}>
@@ -303,19 +360,11 @@ export default function Home() {
                 </span>
               </section>
               <section className={styles.chat_section}>
-                {/* <div className={styles.bot}>
-                  <p>bot</p>
-                  
-                </div>
-                <div className={styles.user}>
-                  <p>user</p>
-                </div> */}
                 {messages.map((message, index) => (
                   <div
                     key={index}
-                    // className={`message ${message.sender === 'user' ? 'user' : 'bot'}`}
                   >
-                    <p>{message.msg}</p>
+                    <p>{message.message}</p>
                   </div>
                 ))}
               </section>
@@ -338,7 +387,33 @@ export default function Home() {
             </section>
           </>
         )}
-      </div>
+      </div> */}
+      <div style={{ position: "relative", height: "75vh", width: "100%" }}>
+          <MainContainer>
+            <ChatContainer >
+              <MessageList
+                style={{ textAlign : 'left', backgroundColor : '#f5f5f5', color : 'red', padding : '2.3em'}}
+                scrollBehavior="smooth"
+                typingIndicator={
+                  isTyping ? (
+                    <TypingIndicator content="The Bali AI is typing" />
+                  ) : null
+                }
+              >
+                {messages.map((message, i) => {
+                  console.log(message);
+                  return <Message style={{color : 'black'}} key={i} model={message} />;
+                })}
+              </MessageList>
+              check text
+              <MessageInput
+                placeholder="Type message here"
+                onSend={handleSend}
+                style={{bottom : '1em'}}
+              />
+            </ChatContainer>
+          </MainContainer>
+        </div>
     </>
   );
 }
