@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import react, { useState, useEffect } from "react";
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import {
   MainContainer,
@@ -10,7 +10,6 @@ import {
 } from "@chatscope/chat-ui-kit-react";
 import "@fortawesome/fontawesome-free/css/all.css";
 import styles from "../styles/Home.module.css";
-import Script from 'next/script';
 
 const API_KEY = process.env.NEXT_PUBLIC_BOT_API;
 
@@ -21,81 +20,16 @@ const systemMessage = {
 };
 
 export default function Home() {
-  // const [isOpen, setIsOpen] = useState(false);
-  // const [inputValue, setInputValue] = useState("");
-
-  // const handleInputChange = (e) => {
-  //   setInputValue(e.target.value);
-  // };
-
-  // const handleKeyPress = (e) => {
-  //   if (e.key === "Enter") {
-  //     handleSend();
-  //   }
-  // };
-
-  // const handleSend = async (message) => {
-  //   const newMessage = {
-  //     message,
-  //     direction: "outgoing",
-  //     sender: "user",
-  //   };
-
-  //   const newMessages = [...messages, newMessage];
-
-  //   setMessages(newMessages);
-
-  //   setIsTyping(true);
-  //   await processMessageToChatGPT(newMessages);
-  // };
-
-  // async function processMessageToChatGPT(chatMessages) {
-
-  //   let apiMessages = chatMessages.map((messageObject) => {
-  //     let role = "";
-  //     if (messageObject.sender === "ChatGPT") {
-  //       role = "assistant";
-  //     } else {
-  //       role = "user";
-  //     }
-  //     return { role: role, content: messageObject.message };
-  //   });
-
-  //   const apiRequestBody = {
-  //     model: "gpt-3.5-turbo",
-  //     messages: [
-  //       systemMessage, 
-  //       ...apiMessages, 
-  //     ],
-  //   };
-
-  //   await fetch("https://api.openai.com/v1/chat/completions", {
-  //     method: "POST",
-  //     headers: {
-  //       Authorization: "Bearer " + API_KEY,
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(apiRequestBody),
-  //   })
-  //     .then((data) => {
-  //       return data.json();
-  //     })
-  //     .then((data) => {
-  //       console.log(data);
-  //       if (data.choices && data.choices.length > 0) {
-  //         setMessages([
-  //           ...chatMessages,
-  //           {
-  //             message: data.choices[0].message.content,
-  //             sender: "ChatGPT",
-  //           },
-  //         ]);
-  //       }
-  //       setIsTyping(false);
-  //     });
-
-  // }
-
+ 
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "//code.tidio.co/8miuhop9bhcm9ypmqhaoi1y9fz2onn2e.js";
+    script.async = true;
+  
+    // Enter your public key above
+    document.body.appendChild(script);
+  }, []);
   const [messages, setMessages] = useState([
     {
       message: "Hello, I'm The Bali Hills AI! How canI help you? ",
@@ -413,7 +347,6 @@ export default function Home() {
             </ChatContainer>
           </MainContainer>
         </div>
-        <Script src="/tidio-script.js" strategy="afterInteractive" />
     </>
   );
 }
