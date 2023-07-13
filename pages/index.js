@@ -10,6 +10,7 @@ import {
 } from "@chatscope/chat-ui-kit-react";
 import "@fortawesome/fontawesome-free/css/all.css";
 import styles from "../styles/Home.module.css";
+import data from '../public/AmenitiesData.json';
 
 const API_KEY = process.env.NEXT_PUBLIC_BOT_API;
 
@@ -21,6 +22,8 @@ const systemMessage = {
 
 export default function Home() {
  
+  const [amenitiesData, setAmenitiesData] = useState(data);
+
   useEffect(() => {
     const script = document.createElement("script");
     script.type = "text/javascript";
@@ -188,6 +191,24 @@ export default function Home() {
         </div>
       </section>
 
+    <section className={styles.amenities_section}>
+      <h1>Amenities</h1>
+
+      <section className={styles.amenities_logo}>
+        <div class={styles.img_container}>
+          {amenitiesData.map((amenity)=>{
+              return(
+                <>
+                <siv className={styles.amenities_img}>
+                  <img src={amenity.src} alt="" />
+                  </siv>
+                </>
+              )
+          })}
+          </div>
+      </section>
+    </section>
+
       <section className={styles.footer_seciton}>
         <section className={styles.contact}>
           <h1 class={styles.section_header}>Contact us</h1>
@@ -322,7 +343,7 @@ export default function Home() {
           </>
         )}
       </div> */}
-      <div style={{ position: "relative", height: "75vh", width: "100%" }}>
+      {/* <div style={{ position: "relative", height: "75vh", width: "100%" }}>
           <MainContainer>
             <ChatContainer >
               <MessageList
@@ -346,7 +367,7 @@ export default function Home() {
               />
             </ChatContainer>
           </MainContainer>
-        </div>
+        </div> */}
     </>
   );
 }

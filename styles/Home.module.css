@@ -610,3 +610,25 @@ color: white;
     margin: 5px 0.7rem;
   }
 }
+
+
+
+/* Amenities Section */
+.amenities_section{
+  margin-top: 6rem;
+  text-align: center;
+}
+.amenities_section h1{
+  font-size: 3rem;
+}
+.img_container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0px 100px;
+}
+.amenities_img img{
+  /* border-radius: 50%; */
+  mix-blend-mode: darken;
+}
+
