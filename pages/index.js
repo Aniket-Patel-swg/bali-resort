@@ -10,6 +10,7 @@ import {
 } from "@chatscope/chat-ui-kit-react";
 import "@fortawesome/fontawesome-free/css/all.css";
 import styles from "../styles/Home.module.css";
+import Script from 'next/script';
 
 const API_KEY = process.env.NEXT_PUBLIC_BOT_API;
 
@@ -404,7 +405,6 @@ export default function Home() {
                   return <Message style={{color : 'black'}} key={i} model={message} />;
                 })}
               </MessageList>
-              check text
               <MessageInput
                 placeholder="Type message here"
                 onSend={handleSend}
@@ -413,6 +413,7 @@ export default function Home() {
             </ChatContainer>
           </MainContainer>
         </div>
+        <Script src="/tidio-script.js" strategy="afterInteractive" />
     </>
   );
 }
