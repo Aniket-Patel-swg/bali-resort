@@ -10,18 +10,17 @@ import {
 } from "@chatscope/chat-ui-kit-react";
 import "@fortawesome/fontawesome-free/css/all.css";
 import styles from "../styles/Home.module.css";
-import data from '../public/AmenitiesData.json';
+import data from "../public/AmenitiesData.json";
 
 const API_KEY = process.env.NEXT_PUBLIC_BOT_API;
 
 const systemMessage = {
   role: "system",
-  content: 
+  content:
     "Explain things like you're customer support team for the Bali Hills Real Estate Project, and you're talking to a potential customer. Also keep it short maximum 10-15 words and firendly. Don't provide exact pricing detials, just say that they can contact us for more information, you can give our mail id 'info@thebalihills.com'.The Bali Hills real estate project is located on wayand in Kerela.",
 };
 
 export default function Home() {
- 
   const [amenitiesData, setAmenitiesData] = useState(data);
 
   useEffect(() => {
@@ -29,7 +28,7 @@ export default function Home() {
     script.type = "text/javascript";
     script.src = "//code.tidio.co/8miuhop9bhcm9ypmqhaoi1y9fz2onn2e.js";
     script.async = true;
-  
+
     // Enter your public key above
     document.body.appendChild(script);
   }, []);
@@ -111,7 +110,6 @@ export default function Home() {
       });
   }
 
-  
   console.log(messages);
 
   return (
@@ -191,23 +189,43 @@ export default function Home() {
         </div>
       </section>
 
-    <section className={styles.amenities_section}>
-      <h1>Amenities</h1>
+      <section className={styles.amenities_section}>
+        <h1>Amenities</h1>
 
-      <section className={styles.amenities_logo}>
-        <div class={styles.img_container}>
-          {amenitiesData.map((amenity)=>{
-              return(
+        <section className={styles.amenities_logo}>
+          <div class={styles.img_container}>
+            {amenitiesData.map((amenity) => {
+              return (
                 <>
-                <siv className={styles.amenities_img}>
-                  <img src={amenity.src} alt="" />
-                  </siv>
+                  <div className={styles.amenities_img}>
+                    <img src={amenity.src} alt="" />
+                  </div>
                 </>
-              )
-          })}
+              );
+            })}
           </div>
+        </section>
       </section>
-    </section>
+
+      <section className={styles.location_section}>
+        <section className={styles.text_section}>
+          <h1>Where is The Bali HIlls?</h1>
+          <section className={styles.location_text}>
+            <p>
+              Discover a captivating real estate project nestled in Bali,
+              Indonesia. <br /> This ambitious endeavor offers a range of real estate
+              activities,<br /> from acquisition and sales to rentals and property
+              management. 
+            </p>
+          </section>
+        </section>
+        <section className={styles.image_section}>
+          <img
+            src="https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt=""
+          />
+        </section>
+      </section>
 
       <section className={styles.footer_seciton}>
         <section className={styles.contact}>
